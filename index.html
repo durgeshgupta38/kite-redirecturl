@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Kite Redirect</title>
+    <script>
+      // Forward all query params to your app
+      window.onload = function() {
+        var params = window.location.search || "";
+        window.location = "tradetrackr://kite-auth" + params;
+      };
+    </script>
+  </head>
+  <body>
+    Redirecting to app...
+  </body>
+</html>

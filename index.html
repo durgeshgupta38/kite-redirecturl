@@ -1,15 +1,25 @@
-<html>
-  <head>
-    <title>Kite Redirect</title>
-    <script>
-      // Forward all query params to your app
-      window.onload = function() {
-        var params = window.location.search || "";
-        window.location = "tradetrackr://kite-auth" + params;
-      };
-    </script>
-  </head>
-  <body>
-    Redirecting to app...
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kite Redirect</title>
+  <script>
+    window.onload = function () {
+      // Extract request_token from URL
+      const params = new URLSearchParams(window.location.search);
+      const requestToken = params.get("request_token");
+
+      if (requestToken) {
+        // Redirect back to your app using deep link
+        const deepLink = `tradetrackr://kiteAuth?request_token=${requestToken}`;
+        window.location.href = deepLink;
+      } else {
+        document.body.innerHTML = "<h2>No request token found in URL.</h2>";
+      }
+    };
+  </script>
+</head>
+<body>
+  <h2>Redirecting back to the app...</h2>
+</body>
 </html>

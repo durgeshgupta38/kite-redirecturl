@@ -14,6 +14,10 @@ console.log(requestToken,params,"ffffffffffffffffffffff")
         // Redirect back to your app using deep link
         const deepLink = `tradetrackr://kiteAuth?request_token=${requestToken}`;
         window.location.href = deepLink;
+          // Auto-close in-app browser
+      setTimeout(() => {
+        window.close(); // Works in WebBrowser context
+      }, 500);
       } else {
         document.body.innerHTML = "<h2>No request token found in URL.</h2>";
       }

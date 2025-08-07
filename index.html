@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <title>Kite Redirect</title>
   <script>
-    window.onload = async function () {
+    window.onload =  function () {
       // Extract request_token from URL
-      const params = await new URLSearchParams(window.location.search);
+      const params =  new URLSearchParams(window.location.search);
       const requestToken = params.get("request_token");
 console.log(requestToken,params,"ffffffffffffffffffffff")
       if (requestToken) {

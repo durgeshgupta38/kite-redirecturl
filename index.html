@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <title>Kite Redirect</title>
   <script>
-    window.onload = function () {
+    window.onload = async function () {
       // Extract request_token from URL
-      const params = new URLSearchParams(window.location.search);
+      const params = await new URLSearchParams(window.location.search);
       const requestToken = params.get("request_token");
 console.log(requestToken,params,"ffffffffffffffffffffff")
       if (requestToken) {
@@ -19,12 +19,12 @@ console.log(requestToken,params,"ffffffffffffffffffffff")
         window.close(); // Works in WebBrowser context
       }, 500);
       } else {
-        document.body.innerHTML = "<h2>No request token found in URL....new.</h2>";
+        document.body.innerHTML = "<h2>No request token found in URL....newsss.</h2>";
       }
     };
   </script>
 </head>
 <body>
-  <h2>Redirecting back to Tradetrackr...new</h2>
+  <h2>Redirecting back to Tradetrackr...newsss</h2>
 </body>
 </html>

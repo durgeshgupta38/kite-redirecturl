@@ -12,7 +12,7 @@
 console.log(requestToken,params,"ffffffffffffffffffffff")
       if (requestToken) {
         // Redirect back to your app using deep link
-        const deepLink = `tradetrackr://tabs?request_token=${requestToken}`;
+        const deepLink = `tradetrackr:/tabs?request_token=${requestToken}`;
         window.location.href = deepLink;
           // Auto-close in-app browser
       setTimeout(() => {
